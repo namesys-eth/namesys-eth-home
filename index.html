@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>NameSys Home</title>
+</head>
+
+<body>
+    <div id="top">
+        <span id="flash"></span>
+    </div>
+    <div id="container">
+        <span id="text1"></span>
+        <span id="text2"></span>
+    </div>
+    <div id="center">
+        <div>
+            <button>
+                <div class="row">
+                    <span class="material-icons" id="adapt">crib</span><span>&nbsp;LITE</span>
+                </div>
+            </button>
+            <button>
+                <div class="row">
+                    <span class="material-icons" id="adapt">badge</span><span>&nbsp;PRO</span>
+                </div>
+            </button>
+        </div>
+    </div>
+    <div class="content">
+        <h2>NameSys</h2>
+        <h2>NameSys</h2>
+    </div>
+    <svg id="filters">
+        <defs>
+            <filter id="threshold">
+                <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                        0 1 0 0 0
+                        0 0 1 0 0
+                        0 0 0 255 -140" />
+            </filter>
+        </defs>
+    </svg>
+    <div id="bottom">
+        <a class="link" href="https://github.com/namesys-eth" target="_blank" rel="noopener noreferrer">
+            <span class="material-icons">settings</span>
+        </a>
+    </div>
+    <div id="bottom" style="
+            padding-bottom: 10px;
+            margin-top: 60px'
+          ">
+        <span style="
+            color: skyblue;
+            font-weight: 800;
+            font-size: 12px;
+            padding-bottom: 5px
+        ">
+            Funded By
+        </span>
+        <span style="
+            color: #ff2600;
+            font-weight: 800;
+            font-size: 14px;
+            padding-bottom: 5px
+        ">
+            ENS DAO
+        </span>
+    </div>
+    <script>
+        const elts = {
+            text1: document.getElementById("text1"),
+            text2: document.getElementById("text2"),
+            flash: document.getElementById("flash")
+        };
+        const size = 25
+        const svgString = `
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 278 278" width="${size}mm" height="${size}mm">
+            <defs>
+                <path id="J" d="M135.837 210.115l14.22-81.21 14.22 53.652z"/>
+                <path id="K" d="M156.045 122.32l14.22 54.14 78.587-76.577z"/>
+                <path id="L" d="M140.577 214.749l78.587-76.821 14.47 54.628z"/>
+                <path id="M" d="M224.902 132.319l28.69-27.802-14.22 81.942z"/>
+            </defs>
+            <g transform="translate(35.88 67.413) matrix(2.193452 0 0 2.243876 -323.83206 -281.53944)" fill-rule="evenodd">
+                <use xlink:href="#J">
+                <animate attributeName="fill" values="#fca400;#fc4c00;#fc0000;#fc003f;#fca400;#fc4c00;#fc0000;#fc003f;#fca400;#fc4c00;#fc0000;" dur="10s" repeatCount="indefinite"/>
+                </use>
+                <use xlink:href="#M">
+                <animate attributeName="fill" values="#fc4c00;#fc0000;#fc003f;#fca400;#fc4c00;#fc0000;#fc003f;#fca400;#fc4c00;#fc0000;#fca400;" dur="10s" repeatCount="indefinite"/>
+                </use>
+                <use xlink:href="#K">
+                <animate attributeName="fill" values="#fc0000;#fc003f;#fca400;#fc4c00;#fc0000;#fc003f;#fca400;#fc4c00;#fc0000;#fca400;#fc4c00;" dur="10s" repeatCount="indefinite"/>
+                </use>
+                <use xlink:href="#L">
+                <animate attributeName="fill" values="#fc003f;#fca400;#fc4c00;#fc0000;#fc003f;#fca400;#fc4c00;#fc0000;#fca400;#fc4c00;#fc0000;" dur="10s" repeatCount="indefinite"/>
+                </use>
+            </g>
+            </svg>
+        `;
+
+        // Append SVG content to the "avatar" div
+        elts.flash.innerHTML = svgString;
+
+        const texts = [
+            "Set",
+            "Your",
+            "ENS",
+            "Free",
+            "Set Your ENS Free"
+        ];
+
+        const morphTime = 1;
+        const cooldownTime = 0.25;
+
+        let textIndex = texts.length - 1;
+        let time = new Date();
+        let morph = 0;
+        let cooldown = cooldownTime;
+        const lastItemDuration = 3.25; // last item
+
+        elts.text1.textContent = texts[textIndex % texts.length];
+        elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
+        function doMorph() {
+            morph -= cooldown;
+            cooldown = 0;
+
+            let fraction = morph / morphTime;
+
+            if (fraction > 1) {
+                cooldown = cooldownTime;
+                fraction = 1;
+            }
+
+            setMorph(fraction);
+        }
+
+        function setMorph(fraction) {
+            elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+            elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+            fraction = 1 - fraction;
+            elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+            elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+            elts.text1.textContent = texts[textIndex % texts.length];
+            elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+        }
+
+        function doCooldown() {
+            morph = 0;
+
+            elts.text2.style.filter = "";
+            elts.text2.style.opacity = "100%";
+
+            elts.text1.style.filter = "";
+            elts.text1.style.opacity = "0%";
+
+            // extend cooldown for last item
+            if (textIndex % 4 == 0 && textIndex > 4) {
+                cooldown = lastItemDuration;
+                textIndex = texts.length - 1;
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            let newTime = new Date();
+            let shouldIncrementIndex = cooldown > 0;
+            let dt = (newTime - time) / 1000;
+            time = newTime;
+
+            cooldown -= dt;
+
+            if (cooldown <= 0) {
+                if (shouldIncrementIndex) {
+                    textIndex++;
+                }
+                doMorph();
+
+            } else {
+                doCooldown();
+            }
+        }
+
+        animate();
+    </script>
+</body>
+
+</html>
