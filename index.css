@@ -33,10 +33,11 @@ body {
     min-height: 100vh !important;
 }
 
-button {
+.button-main {
     appearance: none;
     font-family: "Spotnik";
-    background: transparent;
+    background-color: rgb(18, 11, 11);
+    background-image: linear-gradient(rgb(34, 21, 21), #180e0ee1);
     font-size: 35px;
     font-weight: 800;
     height: 100px;
@@ -44,17 +45,17 @@ button {
     padding: 21px 32px 21px 32px;
     margin-right: 40px;
     margin-left: 40px;
-    border-radius: 6px;
+    border-radius: 10px;
     border-color: #ff2600;
-    border-width: 6px;
+    border-width: 0;
     align-items: left;
-    color: #ff2600;
+    color: #ff5f43;
     transition: all ease 100ms;
     position: relative;
     overflow: hidden;
 }
 
-button:hover {
+.button-main:hover {
     border: none;
     transform: scale(1.25);
     transition: all ease 300ms;
@@ -62,7 +63,7 @@ button:hover {
     background-image: linear-gradient(112deg, rgba(190, 95, 65, 1) 0%, rgba(191, 41, 36, 1) 48%, rgba(203, 111, 0, 1) 100%);
 }
 
-button::before {
+.button-main::before {
     content: attr(data-tooltip);
     position: absolute;
     top: 100%;
@@ -77,33 +78,53 @@ button::before {
     transition: opacity 200ms ease;
 }
 
-button:hover::before {
+.button-main:hover::before {
     opacity: 1;
+}
+
+.button-main:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: 25%;
+    background: linear-gradient(rgba(208, 153, 153, 0.025), rgba(202, 66, 66, 0.0375));
+}
+
+.button-main:hover:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: 30%;
+    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1));
 }
 
 @media screen and (max-width: 1300px) {
 
-    button {
+    .button-main {
         font-size: 30px;
         height: 80px;
         width: 200px;
         padding: 16px 26px 16px 26px;
         margin-right: 30px;
         margin-left: 30px;
-        border-width: 4.5px;
+        border-width: 0;
     }
 }
 
 @media screen and (max-width: 800px) {
 
-    button {
+    .button-main {
         font-size: 24px;
         height: 60px;
         width: 140px;
         padding: 10px 16px 10px 16px;
         margin-right: 20px;
         margin-left: 20px;
-        border-width: 3px;
+        border-width: 0;
     }
 }
 
@@ -157,6 +178,18 @@ button:hover::before {
     align-items: center;
 }
 
+#left {
+    position: absolute;
+    width: 100vw;
+    height: 30pt;
+    top: auto;
+    bottom: 0;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .row {
     display: flex;
     flex-direction: row;
@@ -165,18 +198,18 @@ button:hover::before {
 }
 
 .link {
-    color: #ff2600;
-    margin-right: 98%;
-    margin-left: 5px;
-    cursor: crosshair;
-}
-
-@media screen and (max-width: 1000px) {
-
-    .link {
-        margin-right: 96%;
-        margin-left: 10px;
-    }
+    background: transparent;
+    border: none;
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 800;
+    margin: 4px 0 4px -10px;
+    cursor: copy;
 }
 
 #text1,
@@ -276,5 +309,49 @@ button:hover::before {
 
     #adapt {
         font-size: 26px;
+    }
+}
+
+@keyframes rocking {
+
+    0%,
+    100% {
+        transform: rotate(-35deg);
+    }
+
+    50% {
+        transform: rotate(35deg);
+    }
+}
+
+.rock {
+    animation: rocking 5s ease-in-out infinite;
+}
+
+.emphasis {
+    animation: blink-guide 3s linear infinite;
+}
+
+.emphasis:hover {
+    animation: none;
+}
+
+@keyframes blink-guide {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+
+    25%,
+    75% {
+        opacity: 0.75;
+        transform: scale(1.15);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1);
     }
 }

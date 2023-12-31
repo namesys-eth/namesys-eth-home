@@ -18,14 +18,14 @@
     </div>
     <div id="center">
         <div>
-            <button>
+            <button class="button-main" onclick="window.location.href='https://lite.namesys.xyz'">
                 <div class="row">
-                    <span class="material-icons" id="adapt">crib</span><span>&nbsp;LITE</span>
+                    <span class="material-icons-round rock" id="adapt">crib</span><span>&nbsp;LITE</span>
                 </div>
             </button>
-            <button>
+            <button class="button-main" onclick="window.location.href='https://pro.namesys.xyz'">
                 <div class="row">
-                    <span class="material-icons" id="adapt">badge</span><span>&nbsp;PRO</span>
+                    <span class="material-icons emphasis" id="adapt">dynamic_form</span><span>&nbsp;PRO</span>
                 </div>
             </button>
         </div>
@@ -44,17 +44,19 @@
             </filter>
         </defs>
     </svg>
-    <div id="bottom">
-        <a class="link" href="https://github.com/namesys-eth" target="_blank" rel="noopener noreferrer">
-            <span class="material-icons">settings</span>
-        </a>
+    <div id="left">
+        <button class="link" onclick="window.location.href='https://lite.namesys.xyz'">
+            <div>
+                <span class="material-icons" style="color: #ff5f43;">settings</span>
+            </div>
+        </button>
     </div>
     <div id="bottom" style="
-            padding-bottom: 10px;
+            padding-bottom: 10px;             
             margin-top: 60px'
           ">
         <span style="
-            color: skyblue;
+            color: #ff5f43;
             font-weight: 800;
             font-size: 12px;
             padding-bottom: 5px
@@ -62,12 +64,12 @@
             Funded By
         </span>
         <span style="
-            color: #ff2600;
+            color: skyblue;
             font-weight: 800;
             font-size: 14px;
             padding-bottom: 5px
         ">
-            ENS DAO
+            <img src="ens.png" width="15px" style="margin-bottom: -3px;" />&nbsp;ENS DAO
         </span>
     </div>
     <script>
