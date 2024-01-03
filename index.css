@@ -33,7 +33,7 @@ body {
     min-height: 100vh !important;
 }
 
-body::-webkit-scrollbar {
+.scroll::-webkit-scrollbar {
     display: none;
 }
 
@@ -129,8 +129,8 @@ body::-webkit-scrollbar {
         margin-right: 40px;
         margin-left: 40px;
         border-width: 0;
-        margin-top: 25px;
-        margin-bottom: 25px;
+        margin-top: 20px;
+        margin-bottom: 20px;
         transform: scale(1.0);
     }
 }
@@ -155,7 +155,7 @@ body::-webkit-scrollbar {
 @media screen and (max-width: 800px) {
 
     #container {
-        margin: -10px 0 -30px 0;
+        margin: -140px auto;
     }
 }
 
@@ -167,6 +167,13 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+
+    #center {
+        margin: 400px auto;
+    }
 }
 
 #top {
@@ -259,6 +266,7 @@ body::-webkit-scrollbar {
     #text1,
     #text2 {
         font-size: 60pt;
+        color: #ffbeb3;
     }
 }
 
@@ -295,6 +303,14 @@ body::-webkit-scrollbar {
 .content h2 {
     font-size: 3em;
     position: absolute;
+}
+
+@media screen and (max-width: 800px) {
+
+    .content h2 {
+        font-size: 2em;
+        margin-top: -35px;
+    }
 }
 
 .small {
@@ -412,7 +428,7 @@ body::-webkit-scrollbar {
 @media screen and (max-width: 800px) {
 
     .footer-1 {
-        font-size: 12pt;
+        font-size: 8pt;
     }
 }
 
@@ -425,6 +441,6 @@ body::-webkit-scrollbar {
 @media screen and (max-width: 800px) {
 
     .footer-2 {
-        font-size: 14pt;
+        font-size: 10pt;
     }
 }
