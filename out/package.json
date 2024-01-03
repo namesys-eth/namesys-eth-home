@@ -1,9 +1,0 @@
-{
-  "name": "@namesys-eth/namesys-home",
-  "version": "1.0-beta",
-  "homepage": "https://namesys.xyz",
-  "description": "NameSys/CCIP2 Home Page",
-  "scripts": {
-    "ghp-deploy": "rm out/* > /dev/null 2>&1; touch out/.nojekyll && cp -r *.* out/ && git add -f out && git commit -S -m 'auto-commit: gh-pages' && git subtree push --prefix out origin gh-pages"
-  }
-}
