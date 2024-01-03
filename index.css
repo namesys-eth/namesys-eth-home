@@ -33,6 +33,10 @@ body {
     min-height: 100vh !important;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 .button-main {
     appearance: none;
     font-family: "Spotnik";
