@@ -33,7 +33,7 @@ body {
     min-height: 100vh !important;
 }
 
-body::-webkit-scrollbar {
+.scroll::-webkit-scrollbar {
     display: none;
 }
 
@@ -152,13 +152,6 @@ body::-webkit-scrollbar {
     align-items: center;
 }
 
-@media screen and (max-width: 800px) {
-
-    #container {
-        margin: -10px 0 -30px 0;
-    }
-}
-
 #center {
     position: absolute;
     width: 100vw;
@@ -167,6 +160,13 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+
+    #center {
+        margin-top: -40px;
+    }
 }
 
 #top {
@@ -295,6 +295,14 @@ body::-webkit-scrollbar {
 .content h2 {
     font-size: 3em;
     position: absolute;
+}
+
+@media screen and (max-width: 800px) {
+
+    .content h2 {
+        font-size: 2em;
+        margin-top: -40px;
+    }
 }
 
 .small {
