@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <meta name="description" content="NameSys" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="logo.png" />
@@ -22,21 +23,22 @@
         <span id="text2"></span>
     </div>
     <div id="center">
-        <div>
+        <div id="dynamic">
             <button class="button-main" onclick="window.location.href='https://lite.namesys.xyz'">
                 <div class="row">
                     <span class="material-icons-round rock" id="adapt">crib</span><span>&nbsp;LITE</span>
                 </div>
+                <div style="margin-top: -10px;"><span class="small">FOR BASIC USERS</span></div>
             </button>
-            <button class="button-main" onclick="window.location.href='https://pro.namesys.xyz'">
+            <button class="button-main" onclick="window.location.href='https://app.namesys.xyz'">
                 <div class="row">
-                    <span class="material-icons emphasis" id="adapt">dynamic_form</span><span>&nbsp;PRO</span>
+                    <span class="material-icons emphasis" id="adapt">dynamic_form</span><span>&nbsp;APP</span>
                 </div>
+                <div style="margin-top: -10px;"><span class="small">FOR POWER USERS</span></div>
             </button>
         </div>
     </div>
     <div class="content">
-        <h2>NameSys</h2>
         <h2>NameSys</h2>
     </div>
     <svg id="filters">
@@ -60,19 +62,13 @@
             padding-bottom: 10px;             
             margin-top: 60px'
           ">
-        <span style="
+        <span class="footer-1" style="
             color: #ff5f43;
-            font-weight: 800;
-            font-size: 12px;
-            padding-bottom: 5px
         ">
             Funded By
         </span>
-        <span style="
+        <span class="footer-2" style="
             color: skyblue;
-            font-weight: 800;
-            font-size: 14px;
-            padding-bottom: 5px
         ">
             <img src="ens.png" width="15px" style="margin-bottom: -3px;" />&nbsp;ENS DAO
         </span>
