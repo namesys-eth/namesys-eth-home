@@ -125,6 +125,9 @@ body {
         margin-right: 40px;
         margin-left: 40px;
         border-width: 0;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        transform: scale(1.5);
     }
 }
 
@@ -190,6 +193,14 @@ body {
     align-items: flex-start;
 }
 
+@media screen and (max-width: 800px) {
+
+    #left {
+        font-size: 30pt;
+        margin-left: 10px;
+    }
+}
+
 .row {
     display: flex;
     flex-direction: row;
@@ -238,6 +249,17 @@ body {
     #text1,
     #text2 {
         font-size: 80pt;
+    }
+}
+
+#dynamic {
+    display: flex;
+}
+
+@media screen and (max-width: 800px) {
+
+    #dynamic {
+        flex-direction: column;
     }
 }
 
@@ -360,5 +382,18 @@ body {
     50% {
         opacity: 0.5;
         transform: scale(1);
+    }
+}
+
+.footer {
+    font-weight: 800;
+    font-size: 14px;
+    padding-bottom: 5px
+}
+
+@media screen and (max-width: 800px) {
+
+    .footer {
+        font-size: 24pt;
     }
 }
