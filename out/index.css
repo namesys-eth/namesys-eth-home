@@ -152,6 +152,13 @@ body {
     align-items: center;
 }
 
+@media screen and (max-width: 800px) {
+
+    #container {
+        margin: -100px auto;
+    }
+}
+
 #center {
     position: absolute;
     width: 100vw;
@@ -165,7 +172,7 @@ body {
 @media screen and (max-width: 800px) {
 
     #center {
-        margin-top: -40px;
+        margin: 450px auto;
     }
 }
 
