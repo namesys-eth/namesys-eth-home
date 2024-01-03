@@ -385,7 +385,20 @@ body {
     }
 }
 
-.footer {
+.footer-1 {
+    font-weight: 800;
+    font-size: 12px;
+    padding-bottom: 5px
+}
+
+@media screen and (max-width: 800px) {
+
+    .footer-1 {
+        font-size: 20pt;
+    }
+}
+
+.footer-2 {
     font-weight: 800;
     font-size: 14px;
     padding-bottom: 5px
@@ -393,7 +406,7 @@ body {
 
 @media screen and (max-width: 800px) {
 
-    .footer {
+    .footer-2 {
         font-size: 24pt;
     }
 }
