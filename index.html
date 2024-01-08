@@ -1,83 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <meta name="description" content="NameSys" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="logo.png" />
-    <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style" />
-    <link rel="preload" href="SF-Mono.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-    <link rel="preload" href="Spotnik.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-    <link rel="stylesheet" href="index.css">
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      as="style"
+    />
+    <link
+      rel="preload"
+      href="SF-Mono.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Spotnik.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
     <title>NameSys Home</title>
-</head>
+  </head>
 
-<body class="scroll">
+  <body class="scroll">
     <div id="top">
-        <span id="flash"></span>
+      <span id="flash"></span>
     </div>
     <div id="container">
-        <span id="text1"></span>
-        <span id="text2"></span>
+      <span id="text1"></span>
+      <span id="text2"></span>
     </div>
     <div id="center">
-        <div id="dynamic">
-            <button class="button-main" onclick="window.location.href='https://lite.namesys.xyz'">
-                <div class="row">
-                    <span class="material-icons-round rock" id="adapt">crib</span><span>&nbsp;LITE</span>
-                </div>
-                <div style="margin-top: -10px;"><span class="small">FOR BASIC USERS</span></div>
-            </button>
-            <button class="button-main" onclick="window.location.href='https://app.namesys.xyz'">
-                <div class="row">
-                    <span class="material-icons emphasis" id="adapt">dynamic_form</span><span>&nbsp;APP</span>
-                </div>
-                <div style="margin-top: -10px;"><span class="small">FOR POWER USERS</span></div>
-            </button>
-        </div>
+      <div id="dynamic">
+        <button
+          class="button-main"
+          onclick="window.location.href='https://lite.namesys.xyz'"
+        >
+          <div class="row">
+            <span class="material-icons-round rock" id="adapt">crib</span
+            ><span>&nbsp;LITE</span>
+          </div>
+          <div style="margin-top: -10px">
+            <span class="small">FOR BASIC USERS</span>
+          </div>
+        </button>
+        <button
+          class="button-main"
+          onclick="window.location.href='https://app.namesys.xyz'"
+        >
+          <div class="row">
+            <span class="material-icons emphasis" id="adapt">dynamic_form</span
+            ><span>&nbsp;APP</span>
+          </div>
+          <div style="margin-top: -10px">
+            <span class="small">FOR POWER USERS</span>
+          </div>
+        </button>
+      </div>
     </div>
     <div class="content">
-        <h2>NameSys</h2>
+      <h2>NameSys</h2>
     </div>
     <svg id="filters">
-        <defs>
-            <filter id="threshold">
-                <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+      <defs>
+        <filter id="threshold">
+          <feColorMatrix
+            in="SourceGraphic"
+            type="matrix"
+            values="1 0 0 0 0
                         0 1 0 0 0
                         0 0 1 0 0
-                        0 0 0 255 -140" />
-            </filter>
-        </defs>
+                        0 0 0 255 -140"
+          />
+        </filter>
+      </defs>
     </svg>
     <div id="left">
-        <button class="link" onclick="window.location.href='https://lite.namesys.xyz'">
-            <div>
-                <span class="material-icons" style="color: #ff5f43;">settings</span>
-            </div>
-        </button>
+      <button
+        class="link"
+        onclick="window.location.href='https://lite.namesys.xyz'"
+      >
+        <div>
+          <span class="material-icons" style="color: #ff5f43">settings</span>
+        </div>
+      </button>
     </div>
     <div id="bottom">
-        <span class="footer-1" style="
-            color: #ff5f43;
-        ">
-            Funded By
-        </span>
-        <span class="footer-2" style="
-            color: skyblue;
-        ">
-            <img src="ens.png" width="15px" style="margin-bottom: -3px;" />&nbsp;ENS DAO
-        </span>
+      <span class="footer-1" style="color: #ff5f43"> Funded By </span>
+      <span class="footer-2" style="color: skyblue">
+        <img src="ens.png" width="15px" style="margin-bottom: -3px" />&nbsp;ENS
+        DAO
+      </span>
     </div>
     <script>
-        const elts = {
-            text1: document.getElementById("text1"),
-            text2: document.getElementById("text2"),
-            flash: document.getElementById("flash")
-        };
-        const size = 25
-        const svgString = `
+      const elts = {
+        text1: document.getElementById("text1"),
+        text2: document.getElementById("text2"),
+        flash: document.getElementById("flash"),
+      };
+      const size = 25;
+      const svgString = `
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 278 278" width="${size}mm" height="${size}mm">
             <defs>
                 <path id="J" d="M135.837 210.115l14.22-81.21 14.22 53.652z"/>
@@ -102,94 +131,86 @@
             </svg>
         `;
 
-        // Append SVG content to the "avatar" div
-        elts.flash.innerHTML = svgString;
+      // Append SVG content to the "avatar" div
+      elts.flash.innerHTML = svgString;
 
-        const texts = [
-            "Set",
-            "Your",
-            "ENS",
-            "Free",
-            "Set Your ENS Free"
-        ];
+      const texts = ["Set", "Your", "ENS", "Free", "Set Your ENS Free"];
 
-        const morphTime = 1;
-        const cooldownTime = 0.25;
+      const morphTime = 1;
+      const cooldownTime = 0.25;
 
-        let textIndex = texts.length - 1;
-        let time = new Date();
-        let morph = 0;
-        let cooldown = cooldownTime;
-        const lastItemDuration = 3.25; // last item
+      let textIndex = texts.length - 1;
+      let time = new Date();
+      let morph = 0;
+      let cooldown = cooldownTime;
+      const lastItemDuration = 3.25; // last item
+
+      elts.text1.textContent = texts[textIndex % texts.length];
+      elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
+      function doMorph() {
+        morph -= cooldown;
+        cooldown = 0;
+
+        let fraction = morph / morphTime;
+
+        if (fraction > 1) {
+          cooldown = cooldownTime;
+          fraction = 1;
+        }
+
+        setMorph(fraction);
+      }
+
+      function setMorph(fraction) {
+        elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+        elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+        fraction = 1 - fraction;
+        elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+        elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
 
         elts.text1.textContent = texts[textIndex % texts.length];
         elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+      }
 
-        function doMorph() {
-            morph -= cooldown;
-            cooldown = 0;
+      function doCooldown() {
+        morph = 0;
 
-            let fraction = morph / morphTime;
+        elts.text2.style.filter = "";
+        elts.text2.style.opacity = "100%";
 
-            if (fraction > 1) {
-                cooldown = cooldownTime;
-                fraction = 1;
-            }
+        elts.text1.style.filter = "";
+        elts.text1.style.opacity = "0%";
 
-            setMorph(fraction);
+        // extend cooldown for last item
+        if (textIndex % 4 == 0 && textIndex > 4) {
+          cooldown = lastItemDuration;
+          textIndex = texts.length - 1;
         }
+      }
 
-        function setMorph(fraction) {
-            elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
-            elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+      function animate() {
+        requestAnimationFrame(animate);
 
-            fraction = 1 - fraction;
-            elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
-            elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+        let newTime = new Date();
+        let shouldIncrementIndex = cooldown > 0;
+        let dt = (newTime - time) / 1000;
+        time = newTime;
 
-            elts.text1.textContent = texts[textIndex % texts.length];
-            elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+        cooldown -= dt;
+
+        if (cooldown <= 0) {
+          if (shouldIncrementIndex) {
+            textIndex++;
+          }
+          doMorph();
+        } else {
+          doCooldown();
         }
+      }
 
-        function doCooldown() {
-            morph = 0;
-
-            elts.text2.style.filter = "";
-            elts.text2.style.opacity = "100%";
-
-            elts.text1.style.filter = "";
-            elts.text1.style.opacity = "0%";
-
-            // extend cooldown for last item
-            if (textIndex % 4 == 0 && textIndex > 4) {
-                cooldown = lastItemDuration;
-                textIndex = texts.length - 1;
-            }
-        }
-
-        function animate() {
-            requestAnimationFrame(animate);
-
-            let newTime = new Date();
-            let shouldIncrementIndex = cooldown > 0;
-            let dt = (newTime - time) / 1000;
-            time = newTime;
-
-            cooldown -= dt;
-
-            if (cooldown <= 0) {
-                if (shouldIncrementIndex) {
-                    textIndex++;
-                }
-                doMorph();
-
-            } else {
-                doCooldown();
-            }
-        }
-
-        animate();
+      animate();
     </script>
-</body>
-
+  </body>
 </html>
