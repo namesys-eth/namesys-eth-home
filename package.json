@@ -4,9 +4,9 @@
   "homepage": "https://namesys.xyz",
   "description": "NameSys/CCIP2 Home Page",
   "scripts": {
-    "xyz-deploy": "rm out/* out/.* > /dev/null 2>&1; cp -r *.* out/",
-    "eth-deploy": "rm out/* out/.* > /dev/null 2>&1; cp -r *.* out/ && node postbuild/replacerETH.js",
-    "ghp-deploy": "rm out/* > /dev/null 2>&1; touch out/.nojekyll && cp -r *.* out/ && git add -f out && git commit -S -m 'auto-commit: gh-pages' && git subtree push --prefix out origin gh-pages"
+    "xyz-deploy": "rm out/* out/.* > /dev/null 2>&1; cp -r *.* out/; cp -r readme out/",
+    "eth-deploy": "rm out/* out/.* > /dev/null 2>&1; cp -r *.* out/; cp -r readme out/ && node postbuild/replacerETH.js",
+    "ghp-deploy": "rm out/* > /dev/null 2>&1; touch out/.nojekyll && cp -r *.* out/; cp -r readme out/ && git add -f out && git commit -S -m 'auto-commit: gh-pages' && git subtree push --prefix out origin gh-pages"
   },
   "devDependencies": {
     "replace-in-file": "^7.1.0"
